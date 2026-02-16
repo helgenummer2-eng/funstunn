@@ -3,58 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tjenester - 3A Bygg</title>
+    <title>Tjenester | 3A Bygg</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+        }
+        header {
+            background: #004aad;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .service-card h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: #004aad;
+        }
+        .service-card p {
+            margin: 0 0 1.5rem 0;
+            color: #555;
+        }
+        .service-card a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #004aad;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        .service-card a:hover {
+            background: #002f6c;
+        }
+        footer {
+            background: #222;
+            color: #ddd;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Våre Tjenester</h1>
-        <nav>
-            <a href="index.html">Hjem</a>
-            <a href="kontakt.html">Kontakt</a>
-        </nav>
+        <h1>Våre tjenester</h1>
+        <p>Profesjonelle bygg- og renoveringstjenester i Asker, Bærum og Drammen</p>
     </header>
 
     <main>
-        <section>
-            <h2>Badrenovering</h2>
-            <ul>
-                <li><a href="tjenester/badrenovering-asker.html">Badrenovering - Asker</a></li>
-                <li><a href="tjenester/badrenovering-baerum.html">Badrenovering - Bærum</a></li>
-                <li><a href="tjenester/badrenovering-drammen.html">Badrenovering - Drammen</a></li>
-            </ul>
-        </section>
+        <div class="services-grid">
+            <!-- Badrenovering -->
+            <div class="service-card">
+                <h3>Badrenovering Asker</h3>
+                <p>Full renovering av bad med kvalitet og garanti.</p>
+                <a href="tjenester/badrenovering-asker.html">Les mer</a>
+            </div>
+            <div class="service-card">
+                <h3>Badrenovering Bærum</h3>
+                <p>Vi forvandler baderom i Bærum til moderne oaser.</p>
+                <a href="tjenester/badrenovering-baerum.html">Les mer</a>
+            </div>
+            <div class="service-card">
+                <h3>Badrenovering Drammen</h3>
+                <p>Komplett badrenovering i Drammen med fagfolk.</p>
+                <a href="tjenester/badrenovering-drammen.html">Les mer</a>
+            </div>
 
-        <section>
-            <h2>Flislegging</h2>
-            <ul>
-                <li><a href="tjenester/flislegger-asker.html">Flislegging - Asker</a></li>
-                <li><a href="tjenester/flislegger-baerum.html">Flislegging - Bærum</a></li>
-                <li><a href="tjenester/flislegger-drammen.html">Flislegging - Drammen</a></li>
-            </ul>
-        </section>
+            <!-- Flislegging -->
+            <div class="service-card">
+                <h3>Flislegging Asker</h3>
+                <p>Ekspertflislegging for gulv og vegg i Asker.</p>
+                <a href="tjenester/flislegger-asker.html">Les mer</a>
+            </div>
+            <div class="service-card">
+                <h3>Flislegging Bærum</h3>
+                <p>Perfekte fliser lagt med presisjon i Bærum.</p>
+                <a href="tjenester/flislegger-baerum.html">Les mer</a>
+            </div>
+            <div class="service-card">
+                <h3>Flislegging Drammen</h3>
+                <p>Vi legger fliser i Drammen for både bad og kjøkken.</p>
+                <a href="tjenester/flislegger-drammen.html">Les mer</a>
+            </div>
 
-        <section>
-            <h2>Membran</h2>
-            <ul>
-                <li><a href="tjenester/membran-asker.html">Membran - Asker</a></li>
-                <li><a href="tjenester/membran-baerum.html">Membran - Bærum</a></li>
-                <li><a href="tjenester/membran-drammen.html">Membran - Drammen</a></li>
-            </ul>
-        </section>
+            <!-- Membran -->
+            <div class="service-card">
+                <h3>Membran Asker</h3>
+                <p>Vanntett membraninstallasjon for alle baderom.</p>
+                <a href="tjenester/membran-asker.html">Les mer</a>
+            </div>
+            <div class="service-card">
+                <h3>Membran Bærum</h3>
+                <p>Sikre og holdbare membraner i Bærum.</p>
+                <a href="tjenester/membran-baerum.html">Les mer</a>
+            </div>
+            <div class="service-card">
+                <h3>Membran Drammen</h3>
+                <p>Profesjonell membranlegging i Drammen.</p>
+                <a href="tjenester/membran-drammen.html">Les mer</a>
+            </div>
 
-        <section>
-            <h2>Totalrenovering</h2>
-            <ul>
-                <li><a href="tjenester/totalrenovering-asker.html">Totalrenovering - Asker</a></li>
-                <li><a href="tjenester/totalrenovering-baerum.html">Totalrenovering - Bærum</a></li>
-                <li><a href="tjenester/totalrenovering-drammen.html">Totalrenovering - Drammen</a></li>
-            </ul>
-        </section>
+            <!-- Totalrenovering -->
+            <div class="service-card">
+                <h3>Totalrenovering Asker</h3>
+                <p>Fra planlegging til ferdig bygg – vi tar hele jobben.</p>
+                <a href="tjenester/totalrenovering-asker.html">Les mer</a>
+            </div>
+            <div class="service-card">
+                <h3>Totalrenovering Bærum</h3>
+                <p>Vi håndterer totalrenovering av bolig i Bærum.</p>
+                <a href="tjenester/totalrenovering-baerum.html">Les mer</a>
+            </div>
+            <div class="service-card">
+                <h3>Totalrenovering Drammen</h3>
+                <p>Fullstendig renovering i Drammen med garanti.</p>
+                <a href="tjenester/totalrenovering-drammen.html">Les mer</a>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 3A Bygg</p>
+        &copy; 2026 3A Bygg. Alle rettigheter reservert.
     </footer>
 </body>
 </html>
