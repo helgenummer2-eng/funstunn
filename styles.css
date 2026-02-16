@@ -1,22 +1,27 @@
-/* ===== Generelle sider ===== */
+/* ============================= */
+/* Generell styling */
+/* ============================= */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f8f8f8;
-    line-height: 1.6;
+    background: #fefefe;
     color: #333;
+    line-height: 1.6;
 }
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
-/* ===== Header ===== */
+/* ============================= */
+/* Header / Navigasjon */
+/* ============================= */
 header {
     background: #004aad;
-    color: white;
-    padding: 1rem 2rem;
+    color: #fff;
+    padding: 1.5rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,213 +29,208 @@ header {
 }
 
 header img.logo {
-    height: 60px;
+    height: 50px;
 }
 
-header nav a {
-    color: white;
-    margin-left: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+nav a {
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-header nav a.cta-btn {
-    background-color: #f2a900;
+nav a:hover {
+    color: #f2a900;
+}
+
+.cta-btn {
+    background: #f2a900;
     color: #004aad;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-header nav a.cta-btn:hover {
-    background-color: #e18f00;
+.cta-btn:hover {
+    background: #e0a000;
 }
 
-/* ===== Hero-seksjon ===== */
+/* ============================= */
+/* Hero-seksjon */
+/* ============================= */
 .hero {
     position: relative;
     background: url('images/bad1.jpeg') center/cover no-repeat;
-    height: 60vh;
+    height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.hero .overlay {
-    background-color: rgba(0,0,0,0.5);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: #fff;
     text-align: center;
 }
 
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
 .hero h1 {
-    color: white;
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 .hero p {
-    color: white;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
 }
 
-.hero .hero-cta a {
-    margin: 0 0.5rem;
+.hero .primary-btn,
+.hero .secondary-btn {
+    margin: 0 10px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
 }
 
-/* ===== Seksjoner ===== */
-section {
-    padding: 2rem;
+.hero .primary-btn {
+    background: #f2a900;
+    color: #004aad;
+}
+
+.hero .secondary-btn {
+    background: rgba(255,255,255,0.85);
+    color: #004aad;
+}
+
+/* ============================= */
+/* Seksjoner / Container */
+/* ============================= */
+.section {
+    padding: 60px 20px;
     max-width: 1200px;
     margin: auto;
 }
 
-section h2 {
-    color: #004aad;
-    margin-bottom: 1rem;
-}
-
-/* ===== Tjenestekort ===== */
-.services-grid {
+/* ============================= */
+/* Tjenester / Grid */
+/* ============================= */
+.services-grid, .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 20px;
 }
 
-.service-card {
-    background: white;
+.service-card, .project-card {
+    background: #fff;
     border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
 }
 
-.service-card:hover {
-    transform: translateY(-8px);
+.service-card:hover, .project-card:hover {
+    transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.service-card h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
+.service-card h3, .project-card h3 {
     color: #004aad;
-    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
-/* Emoji for tjenester */
-.service-card h3::before {
-    content: "🔨 ";
-}
-
-.service-card:nth-child(4) h3::before,
-.service-card:nth-child(5) h3::before,
-.service-card:nth-child(6) h3::before {
-    content: "🧱 ";
-}
-
-.service-card:nth-child(7) h3::before,
-.service-card:nth-child(8) h3::before,
-.service-card:nth-child(9) h3::before {
-    content: "💧 ";
-}
-
-.service-card:nth-child(10) h3::before,
-.service-card:nth-child(11) h3::before,
-.service-card:nth-child(12) h3::before {
-    content: "🏠 ";
-}
-
-.service-card p {
+.service-card p, .project-card p {
     color: #555;
-    margin-bottom: 1.5rem;
 }
 
-.service-card a {
+/* Knapp */
+.primary-btn {
     display: inline-block;
-    background: #004aad;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    transition: background 0.3s;
+    background-color: #004aad;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-.service-card a:hover {
-    background: #002f6c;
+.primary-btn:hover {
+    background-color: #002f6c;
 }
 
-/* ===== Kontakt-skjema ===== */
+/* ============================= */
+/* Prosjekter-seksjon */
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* ============================= */
+/* Kontakt-skjema */
 form {
     max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: auto;
+    padding: 30px;
+    background: #f7f7f7;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
 form label {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 form input, form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 15px;
-    border-radius: 5px;
+    border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 16px;
-    box-sizing: border-box;
 }
 
 form input:focus, form textarea:focus {
-    border-color: #007BFF;
+    border-color: #004aad;
     outline: none;
 }
 
-.primary-btn {
-    display: inline-block;
-    background-color: #007BFF;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.primary-btn:hover {
-    background-color: #0056b3;
-}
-
 #confirmation {
-    text-align: center;
-    font-weight: bold;
+    display: none;
     color: green;
+    font-weight: bold;
     margin-top: 10px;
+    text-align: center;
 }
 
-/* ===== Footer ===== */
+/* ============================= */
+/* Footer */
 footer {
     background: #222;
     color: #ddd;
     text-align: center;
-    padding: 1.5rem;
-    margin-top: 2rem;
+    padding: 2rem;
+    margin-top: 40px;
 }
 
-/* ===== Mobilrespons ===== */
+footer p {
+    margin: 5px 0;
+}
+
+/* ============================= */
+/* Mobilspesifikk */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-    header nav a {
-        margin: 0.5rem 0;
-    }
-    .hero {
-        height: 40vh;
-    }
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    header { flex-direction: column; text-align: center; }
+    nav a { margin: 10px 5px; }
 }
