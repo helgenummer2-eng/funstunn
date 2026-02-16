@@ -1,36 +1,103 @@
-/* Generelle sider */
+/* ===== Generelle sider ===== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: #f8f8f8;
+    line-height: 1.6;
+    color: #333;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* ===== Header ===== */
 header {
     background: #004aad;
     color: white;
-    padding: 2rem;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header img.logo {
+    height: 60px;
+}
+
+header nav a {
+    color: white;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+header nav a.cta-btn {
+    background-color: #f2a900;
+    color: #004aad;
+}
+
+header nav a.cta-btn:hover {
+    background-color: #e18f00;
+}
+
+/* ===== Hero-seksjon ===== */
+.hero {
+    position: relative;
+    background: url('images/bad1.jpeg') center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .overlay {
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
+.hero h1 {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
 }
 
-main {
+.hero p {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero .hero-cta a {
+    margin: 0 0.5rem;
+}
+
+/* ===== Seksjoner ===== */
+section {
     padding: 2rem;
     max-width: 1200px;
     margin: auto;
 }
 
-/* Grid for tjenestekort */
+section h2 {
+    color: #004aad;
+    margin-bottom: 1rem;
+}
+
+/* ===== Tjenestekort ===== */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
-/* Hvert tjenestekort */
 .service-card {
     background: white;
     border-radius: 12px;
@@ -40,13 +107,11 @@ main {
     text-align: center;
 }
 
-/* Hover-effekt */
 .service-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* Korttittel */
 .service-card h3 {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -54,75 +119,48 @@ main {
     font-size: 1.2rem;
 }
 
-/* Kortbeskrivelse */
-.service-card p {
-    margin: 0 0 1.5rem 0;
-    color: #555;
-    line-height: 1.4;
+/* Emoji for tjenester */
+.service-card h3::before {
+    content: "🔨 ";
 }
 
-/* Knapp */
+.service-card:nth-child(4) h3::before,
+.service-card:nth-child(5) h3::before,
+.service-card:nth-child(6) h3::before {
+    content: "🧱 ";
+}
+
+.service-card:nth-child(7) h3::before,
+.service-card:nth-child(8) h3::before,
+.service-card:nth-child(9) h3::before {
+    content: "💧 ";
+}
+
+.service-card:nth-child(10) h3::before,
+.service-card:nth-child(11) h3::before,
+.service-card:nth-child(12) h3::before {
+    content: "🏠 ";
+}
+
+.service-card p {
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
 .service-card a {
     display: inline-block;
-    text-decoration: none;
-    color: white;
     background: #004aad;
+    color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
-    transition: background 0.2s;
+    transition: background 0.3s;
 }
 
 .service-card a:hover {
     background: #002f6c;
 }
 
-/* Fargekoding for type tjeneste */
-.service-card:nth-child(1), .service-card:nth-child(2), .service-card:nth-child(3) {
-    border-top: 4px solid #e94b35; /* Badrenovering – rød */
-}
-.service-card:nth-child(4), .service-card:nth-child(5), .service-card:nth-child(6) {
-    border-top: 4px solid #f2a900; /* Flislegging – oransje */
-}
-.service-card:nth-child(7), .service-card:nth-child(8), .service-card:nth-child(9) {
-    border-top: 4px solid #00796b; /* Membran – grønn */
-}
-.service-card:nth-child(10), .service-card:nth-child(11), .service-card:nth-child(12) {
-    border-top: 4px solid #5d4a91; /* Totalrenovering – lilla */
-}
-
-/* Emoji foran hver korttittel */
-.service-card h3::before {
-    content: "🔨 "; /* standard hammer */
-}
-
-.service-card:nth-child(4) h3::before,
-.service-card:nth-child(5) h3::before,
-.service-card:nth-child(6) h3::before {
-    content: "🧱 "; /* flislegging */
-}
-
-.service-card:nth-child(7) h3::before,
-.service-card:nth-child(8) h3::before,
-.service-card:nth-child(9) h3::before {
-    content: "💧 "; /* membran/vanntett */
-}
-
-.service-card:nth-child(10) h3::before,
-.service-card:nth-child(11) h3::before,
-.service-card:nth-child(12) h3::before {
-    content: "🏠 "; /* totalrenovering */
-}
-
-/* Footer */
-footer {
-    background: #222;
-    color: #ddd;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 3rem;
-}
-
-/* Kontakt-skjema */
+/* ===== Kontakt-skjema ===== */
 form {
     max-width: 600px;
     margin: 20px auto;
@@ -136,25 +174,19 @@ form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #333;
 }
 
-form input[type="text"],
-form input[type="email"],
-form input[type="tel"],
-form textarea {
+form input, form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
     border-radius: 5px;
+    border: 1px solid #ccc;
     font-size: 16px;
     box-sizing: border-box;
-    transition: border-color 0.3s;
 }
 
-form input:focus,
-form textarea:focus {
+form input:focus, form textarea:focus {
     border-color: #007BFF;
     outline: none;
 }
@@ -162,13 +194,11 @@ form textarea:focus {
 .primary-btn {
     display: inline-block;
     background-color: #007BFF;
-    color: #fff;
+    color: white;
     padding: 12px 25px;
-    font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .primary-btn:hover {
@@ -176,9 +206,31 @@ form textarea:focus {
 }
 
 #confirmation {
-    font-size: 16px;
+    text-align: center;
     font-weight: bold;
     color: green;
-    text-align: center;
     margin-top: 10px;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #222;
+    color: #ddd;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* ===== Mobilrespons ===== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    header nav a {
+        margin: 0.5rem 0;
+    }
+    .hero {
+        height: 40vh;
+    }
 }
